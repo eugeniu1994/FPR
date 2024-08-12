@@ -5,4 +5,5 @@ Fast Point Ranking - robust cloud voxelization and denoising for lidar odometry 
 
 ![alt text]([http://url/to/img.png](https://github.com/eugeniu1994/FPR/blob/c896008b1138366255c03d361d6a3ca314d78f84/paper-teaser.png))
 
+![Example Image](https://github.com/eugeniu1994/FPR/blob/c896008b1138366255c03d361d6a3ca314d78f84/paper-teaser.png)
 
