@@ -45,7 +45,9 @@ how_many_to_filter: percentage of lowest-rank points to drop (e.g. 10 = drop 10%
 use_weighted: use intensity-weighted centroid instead of single max-intensity point
 
 🛠️ TODO
+
 Add support for different point types (PointXYZ, PointXYZI, etc.)
+
 Integrate with scan registration (e.g. ICP)
 
 📧 Maintainer
