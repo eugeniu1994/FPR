@@ -22,7 +22,7 @@ It leverages range image projection and rank-based voxelization to select or ave
 
 ```sh
 cd ~/catkin_ws/src/ #change this according to your system
-git clone add_the_path_here 
+git clone https://github.com/eugeniu1994/FPR.git
 cd ..
 catkin_make -DCATKIN_WHITELIST_PACKAGES="fpr"
 source devel/setup.bash
