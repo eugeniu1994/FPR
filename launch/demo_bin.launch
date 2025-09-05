@@ -1,0 +1,29 @@
+<launch>
+
+    <!-- Arguments -->
+
+    <arg name="from_bag" default="false" /> <!-- if this is true read from bag file, else from .bin files -->
+
+    <arg name="bin_file" default="/home/eugeniu/catkin_ws/src/fpr/data/" />  <!-- change this according to your system-->
+
+    <arg name="rviz" default="true" />
+    <arg name="input_topic"  default="/hesai/pandar" />
+    <arg name="output_topic_fpr" default="/fpr" />
+    <arg name="output_topic_voxelized" default="/fpr_voxelized" />
+    <arg name="output_topic_filtered" default="/fpr_filtered" />
+    <arg name="voxel_size" default=".5" />
+
+    <node pkg="fpr" type="main" name="main" output="screen" >
+        <param name="from_bag" value="$(arg from_bag)" />
+        <param name="bin_file" value="$(arg bin_file)" />
+        <param name="input_topic"  value="$(arg input_topic)" />
+        <param name="output_topic_fpr" value="$(arg output_topic_fpr)" />
+        <param name="output_topic_voxelized" value="$(arg output_topic_voxelized)" />
+        <param name="voxel_size" value="$(arg voxel_size)" />
+    </node>
+    
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find fpr)/rviz_cfg/visualize.rviz" />
+    </group>
+
+</launch>
