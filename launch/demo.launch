@@ -1,0 +1,26 @@
+<launch>
+
+    <!-- Arguments -->
+    <arg name="bag_file" default="/media/eugeniu/T7/2024-03-07-14-40-23.bag" />
+    <arg name="rviz" default="true" />
+    <arg name="input_topic"  default="/hesai/pandar" />
+    <arg name="output_topic_fpr" default="/fpr" />
+    <arg name="output_topic_voxelized" default="/fpr_voxelized" />
+    <arg name="output_topic_filtered" default="/fpr_filtered" />
+    <arg name="voxel_size" default=".5" />
+
+
+    <node pkg="fpr" type="main" name="main" output="screen" >
+        <param name="input_topic"  value="$(arg input_topic)" />
+        <param name="output_topic_fpr" value="$(arg output_topic_fpr)" />
+        <param name="output_topic_voxelized" value="$(arg output_topic_voxelized)" />
+        <param name="voxel_size" value="$(arg voxel_size)" />
+    </node>
+    
+    <node pkg="rosbag" type="play" name="rosbag_play" args="-r 1 $(arg bag_file)" output="log" />
+
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find fpr)/rviz_cfg/visualize.rviz" />
+    </group>
+
+</launch>
