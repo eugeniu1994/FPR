@@ -32,8 +32,17 @@ source devel/setup.bash
 
 Run the demo on your own bag file:
 ```sh
-roslaunch fpr demo.launch bag_file:=/media/eugeniu/T7/evo-bags/1_hesai-CPT_2024-07-25-12-48-43.bag
+roslaunch fpr demo_bag.launch bag_file:=/media/eugeniu/T7/evo-bags/1_hesai-CPT_2024-07-25-12-48-43.bag
 ```
+
+Run the demo on your own Adverse-Weather-Kitti-360:
+```sh
+roslaunch fpr demo_bin.launch
+```
+
+Point clouds affected by 🌧️ rain, ❄️ snow, and 🌫️ fog are available in the Adverse Weather KITTI-360 dataset
+
+https://etsin.fairdata.fi/dataset/fcd18634-79dc-4151-be54-cd452ac3b7b6/data
 
 ⚙️ Configuration
 Main parameters you can adjust (via launch/config files):
