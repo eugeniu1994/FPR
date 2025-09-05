@@ -5,7 +5,7 @@ Fast Point Ranking (FPR) provides **robust cloud voxelization and denoising** fo
 It leverages range image projection and rank-based voxelization to select or average points per voxel, reducing noise while preserving geometric structure.  
 
 ![Fast Point Ranking](https://github.com/eugeniu1994/FPR/blob/c896008b1138366255c03d361d6a3ca314d78f84/paper-teaser.png)
-
+![Fast Point Ranking](https://github.com/eugeniu1994/FPR/blob/c896008b1138366255c03d361d6a3ca314d78f84/paper-teaser.png
 ---
 
 ## ✨ Features
