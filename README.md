@@ -53,6 +53,9 @@ how_many_to_filter: percentage of lowest-rank points to drop (e.g. 10 = drop 10%
 
 use_weighted: use intensity-weighted centroid instead of single max-intensity point
 
+Real-world snow scenario on Velodyne VLS 128 scans.
+![Fast Point Ranking](https://github.com/eugeniu1994/FPR/blob/c896008b1138366255c03d361d6a3ca314d78f84/paper-teaser.png)
+
 🛠️ TODO
 
 Add support for different point types (PointXYZ, PointXYZI, etc.)
