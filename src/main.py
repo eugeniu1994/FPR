@@ -160,7 +160,7 @@ def filter_by_rank_percent(points, drop_percent):
 # pipeline 
 cloud_trimmed, Neighbours = project_to_range_image(x, y, z, ring)
 cloud_ranked = compute_rank(points, cloud_trimmed, Neighbours)
-filtered = filter_by_rank_percent(cloud_ranked, 5.0) #drop 5 % of lowest rank points
+filtered = filter_by_rank_percent(cloud_ranked, 7.0) #drop 5 % of lowest rank points
 
 
 visualize = True
@@ -170,7 +170,8 @@ if visualize:
     
     points = cloud_ranked[:, :3]
     rank = cloud_ranked[:, 3]
-    rank_norm = (rank - np.min(rank)) / (np.max(rank) - np.min(rank) + 1e-8)
+    min_rank, max_rank, min_max = np.min(rank), np.max(rank), (np.max(rank) - np.min(rank) + 1e-8)
+    rank_norm = (rank - min_rank) / min_max
     colors = cmap(rank_norm)[:, :3]  
     pcd_orig = o3d.geometry.PointCloud()
     pcd_orig.points = o3d.utility.Vector3dVector(points)
@@ -180,7 +181,7 @@ if visualize:
 
     points = filtered[:, :3]
     rank = filtered[:, 3]
-    rank_norm = (rank - np.min(rank)) / (np.max(rank) - np.min(rank) + 1e-8)
+    rank_norm = (rank - min_rank) / min_max
     colors = cmap(rank_norm)[:, :3]   
     pcd_filtered = o3d.geometry.PointCloud()
     filtered[:, 2] += 50 #add 50m on z to shift it up in the visualization 
